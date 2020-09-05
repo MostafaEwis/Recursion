@@ -5,15 +5,23 @@ var cs = 5;
 var ex = 1;
 var ey = 1;
 var r = 0;
+var tempY;
+var tempX;
 
 function setup() {
+  tempY = windowHeight;
+  tempX = windowWidth;
   createCanvas(windowWidth, windowHeight - 30);
   sliderX = createSlider(0, 50, 0, 1);
   sliderY = createSlider(0, 50, 0, 1);
 }
 
 function draw() {
-  createCanvas(windowWidth, windowHeight - 30);
+ if (tempX != windowWidth || tempX != windowWidth) {
+    createCanvas(windowWidth, windowHeight - 30);
+    tempY = windowHeight;
+    tempX = windowWidth;
+  }
   sx = sliderX.value();
   sy = sliderY.value();
   sx += random(-r, r);
