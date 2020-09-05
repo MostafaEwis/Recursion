@@ -5,6 +5,7 @@ var cs = 5;
 var ex = 1;
 var ey = 1;
 var r = 0;
+var s;
 var tempY;
 var tempX;
 
@@ -31,12 +32,17 @@ function draw() {
   if (c > 255 || c < 1) {
     cs *= -1;
   }
+  if (Math.floor(width / 4) > 300) {
+    s = 300;
+  } else {
+    s = Math.floor(width / 4);
+  }
   background(255 - c);
   noFill();
   stroke(c);
   rectMode(CENTER);
   strokeWeight(1);
-  meh(width / 2, height / 2, 300);
+  meh(width / 2, height / 2, s);
 }
 
 function meh(x, y, d) {
